@@ -9,9 +9,10 @@ body {
 
 header {
     background: #ff8fab;
-    color: pink;
+    color: #333333; /* เปลี่ยนจาก pink เป็น #333333 (สีเทาเข้ม) หรือใช้คำว่า black ก็ได้ครับ */
     padding: 20px 0;
     text-align: center;
+}
 }
 
 header h1 {
@@ -26,13 +27,15 @@ section {
     padding: 20px;
     margin: 20px auto;
     max-width: 800px;
-    background: pink;
+    background: #ffffff; /* เปลี่ยนเป็นสีขาว เพื่อให้กล่องข้อความเด่นขึ้นมาจากพื้นหลังสีชมพู */
     border-radius: 8px;
 }
-cssh2 {
-    color: #4CAF50; /* สีของหัวข้อ */
+
+h2 {
+    color: #ff577f; /* เปลี่ยนสีหัวข้อเป็นชมพูเข้ม จะได้เข้ากับธีมใหม่ และไม่เป็นสีเขียวเดิม */
 }
-css.project {
+
+.project {
     margin-bottom: 20px;
 }
 
@@ -40,14 +43,16 @@ css.project {
     margin: 0 0 10px;
     color: #333;
 }
-cssul {
+
+ul {
     list-style-type: square; /* ใช้จุดสี่เหลี่ยมแทนจุดกลม */
     padding-left: 20px;
 }
-cssfooter {
+
+footer {
     text-align: center;
     padding: 10px 0;
-    background: #333; /* สีพื้นหลังเข้ม */
-    color: pink;
+    background: #333333; /* สีพื้นหลังแถบด้านล่างสุดเป็นสีเทาเข้ม */
+    color: #ffffff;      /* เปลี่ยนตัวหนังสือด้านล่างเป็นสีขาว จะได้มองเห็นชัดเจน */
     margin-top: 20px;
 }
