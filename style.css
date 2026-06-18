@@ -1,100 +1,138 @@
-/* 1. ตั้งค่าพื้นหลังหลักของเว็บให้เป็นสีชมพูพาสเทลละมุนๆ */
+/* 1. ตั้งค่าพื้นหลังหลักและการเลื่อนแบบนุ่มนวล */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* เปลี่ยนฟอนต์ให้ดูโมเดิร์นขึ้น */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.7;
     margin: 0;
     padding: 0;
-    background-color: #fceef2; /* สีชมพูพาสเทลนุ่มๆ สบายตา */
-    color: #3a3a3a; /* สีตัวหนังสือเทาเข้ม ไม่ดำสนิท ทำให้อ่านง่าย */
+    background-color: #fceef2;
+    color: #3a3a3a;
+    overflow-x: hidden;
 }
 
-/* 2. ส่วนหัวข้อด้านบนสุด (Header) */
+/* 2. ส่วนหัวข้อด้านบนสุด (Header) มีลูกเล่นตัวหนังสือเด้งเบาๆ ตอนโหลด */
 header {
     text-align: center;
-    padding: 50px 20px; /* เพิ่มพื้นที่ให้ดูโล่ง โปร่งสบาย */
-    background: transparent; /* ปล่อยให้กลืนไปกับพื้นหลังหลัก */
+    padding: 60px 20px;
+    background: transparent;
+    animation: fadeInDown 1s ease-out; /* ลูกเล่นเลื่อนลงมาจากด้านบน */
 }
 
 header h1 {
-    font-size: 2.5rem;
-    color: #d46a85; /* สีชมพูเข้มแบบตุ่นๆ ดูแพง */
+    font-size: 2.8rem;
+    color: #d46a85;
     margin-bottom: 10px;
     font-weight: 700;
+    letter-spacing: -1px;
 }
 
 header p {
-    font-size: 1.1rem;
-    color: #8a7b80; /* สีคำโปรยแบบซอฟต์ๆ */
+    font-size: 1.2rem;
+    color: #8a7b80;
     margin: 0;
 }
 
-/* 3. กล่องข้อความสีขาว (คาร์ดแสดงผลงาน) */
+/* 3. กล่องข้อความหลัก (Section) */
 section {
     padding: 40px;
-    margin: 0 auto 30px auto;
+    margin: 0 auto 40px auto;
     max-width: 750px;
-    background: #ffffff; /* กล่องสีขาวบริสุทธิ์ */
-    border-radius: 20px; /* ปรับขอบให้มนโค้งแบบสมัยใหม่ */
-    box-shadow: 0 10px 30px rgba(212, 106, 133, 0.08); /* ใส่เงาฟุ้งๆ สีชมพูอ่อนๆ ให้กล่องดูลอยออกมา */
-    border: 1px solid rgba(212, 106, 133, 0.1); /* ขอบเส้นบางๆ เพื่อความเนี๊ยบ */
+    background: #ffffff;
+    border-radius: 24px; /* ขอบมนสวยๆ */
+    box-shadow: 0 10px 40px rgba(212, 106, 133, 0.06);
+    border: 1px solid rgba(212, 106, 133, 0.08);
+    animation: fadeInUp 1.2s ease-out; /* ลูกเล่นกล่องลอยขึ้นตอนเปิดเว็บ */
 }
 
 h2 {
     font-size: 1.6rem;
     color: #d46a85;
     margin-top: 0;
-    margin-bottom: 25px;
-    border-bottom: 2px solid #fceef2; /* ขีดเส้นใต้หัวข้อแบบน่ารักๆ */
-    padding-bottom: 10px;
+    margin-bottom: 30px;
+    border-bottom: 2px dashed #fceef2; /* เปลี่ยนเป็นเส้นประน่ารักๆ */
+    padding-bottom: 12px;
 }
 
-/* 4. ส่วนของโปรเจกต์ */
+/* 4. ลูกเล่นเก๋ๆ ตรงกล่องโปรเจกต์ (ขยับได้เมื่อเมาส์ชี้!) */
 .project {
-    margin-bottom: 25px;
-    padding: 15px;
-    border-radius: 12px;
-    transition: background 0.3s ease;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 16px;
+    background: #ffffff;
+    border: 1px solid #fceef2;
+    cursor: pointer;
+    
+    /* สั่งให้โค้ดส่วนนี้ขยับแบบนุ่มนวล (Transition) */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
 }
 
-/* เวลาเอาเมาส์ไปชี้ที่โปรเจกต์ จะมีไฮไลต์ชมพูอ่อนขึ้นมา */
+/* ⚡️ เมื่อเอาเมาส์ไปชี้ที่กล่องโปรเจกต์ */
 .project:hover {
-    background: #fff8f9;
+    transform: translateY(-8px) scale(1.02); /* กล่องจะลอยขึ้นและขยายใหญ่ขึ้นนิดนึง */
+    background: #fff8f9; /* เปลี่ยนสีพื้นหลังกล่องให้อ่อนลง */
+    box-shadow: 0 15px 30px rgba(212, 106, 133, 0.15); /* เงาจะเข้มขึ้นดูลอยเด่น */
+    border-color: #ffb3c6; /* เส้นขอบเปลี่ยนเป็นสีชมพู */
 }
 
-.project h3 {
-    font-size: 1.3rem;
-    margin: 0 0 8px 0;
-    color: #4a4a4a;
+/* ตัวหนังสือในโปรเจกต์เปลี่ยนสีเมื่อเมาส์ชี้ */
+.project:hover h3 {
+    color: #d46a85;
+    transition: color 0.3s ease;
 }
 
-/* 5. รายการเบลเล็ต (จุดไข่ปลา) */
+/* 5. รายการจุดไข่ปลา (ขยับดุ๊กดิ๊กเวลาชี้) */
 ul {
-    list-style-type: none; /* เอาจุดสี่เหลี่ยม/กลมแบบเชยๆ ออก */
+    list-style-type: none;
     padding-left: 0;
 }
 
 ul li {
     position: relative;
-    padding-left: 20px;
-    margin-bottom: 10px;
+    padding-left: 25px;
+    margin-bottom: 12px;
+    transition: transform 0.2s ease;
 }
 
-/* สร้างจุดวงกลมสีชมพูเล็กๆ หน้าข้อความแทน */
+/* ดึงข้อความให้ขยับขวาเล็กน้อยเวลาเมาส์ชี้ */
+ul li:hover {
+    transform: translateX(5px); 
+}
+
 ul li::before {
-    content: "•";
-    color: #d46a85;
-    font-weight: bold;
-    display: inline-block;
-    width: 20px;
-    margin-left: -20px;
+    content: "🌸"; /* เปลี่ยนจากจุดกลมๆ เป็นไอคอนดอกไม้สุดเก๋ */
+    position: absolute;
+    left: 0;
+    top: 2px;
+    font-size: 0.9rem;
 }
 
-/* 6. แถบด้านล่างสุดของเว็บ (Footer) */
+/* 6. ส่วนท้าย (Footer) */
 footer {
     text-align: center;
-    padding: 30px 0;
-    background: transparent; /* ไม่ใช้แถบดำหนาๆ เปลี่ยนเป็นปล่อยโล่ง */
+    padding: 40px 0;
+    background: transparent;
     color: #a69499;
     font-size: 0.9rem;
-    margin-top: 50px;
+}
+
+/* 🛸 ส่วนของแอนิเมชันตอนเปิดหน้าเว็บครั้งแรก (Keyframes) */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
