@@ -1,172 +1,100 @@
-/*/* 1. การตั้งค่าทั่วไปของหน้าเว็บ (body) /
+/* 1. ตั้งค่าพื้นหลังหลักของเว็บให้เป็นสีชมพูพาสเทลละมุนๆ */
 body {
-font-family: Arial, sans-serif; / ตั้งค่าฟอนต์หลัก /
-line-height: 1.6; / ระยะห่างระหว่างบรรทัดเพื่อให้ง่ายต่อการอ่าน /
-margin: 0;
-padding: 0;
-background-color: #f4f4f4; / สีพื้นหลังของเว็บ /
-color: #333; / สีตัวอักษรหลัก */
-}
-
-/* 2. ส่วนหัว (header) /
-header {
-background: #4CAF50; / สีพื้นหลังของส่วนหัว /
-color: white; / สีข้อความ /
-padding: 20px 0; / ระยะห่างด้านบนและล่าง /
-text-align: center; / จัดข้อความกึ่งกลาง */
-}
-
-header h1 {
-margin: 0;
-}
-
-header p {
-margin: 5px 0 0; /* ตั้งค่าระยะห่างของข้อความรอง */
-}
-
-/* 3. ส่วนเนื้อหา (section) /
-section {
-padding: 20px;
-margin: 20px auto;
-max-width: 800px; / จำกัดความกว้างของเนื้อหา /
-background: white; / พื้นหลังสีขาว /
-border-radius: 8px; / ทำให้ขอบมน /
-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); / เพิ่มเงาเบาๆ */
-}
-
-/* 4. หัวข้อ (h2) /
-h2 {
-color: #4CAF50; / สีของหัวข้อ */
-}
-
-/* 5. ส่วนแสดงโพรเจกต์ (.project) */
-.project {
-margin-bottom: 20px;
-}
-
-.project h3 {
-margin: 0 0 10px;
-color: #333;
-}
-
-/* 6. รายการทักษะ (ul) /
-ul {
-list-style-type: square; / ใช้จุดสี่เหลี่ยมแทนจุดกลม */
-padding-left: 20px;
-}
-
-/* 7. ส่วนท้าย (footer) /
-footer {
-text-align: center;
-padding: 10px 0;
-background: #333; / สีพื้นหลังเข้ม */
-color: white;
-margin-top: 20px;
-}
-/* นำเข้าฟอนต์ Google Font (Sarabun และ Prompt) เพื่อความเข้ากันกับธีม */
-@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&family=Sarabun:wght@300;400;500;600&display=swap');
-
-/* 1. การตั้งค่าทั่วไป (Global Styles) */
-body {
-    font-family: 'Prompt', 'Sarabun', Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* เปลี่ยนฟอนต์ให้ดูโมเดิร์นขึ้น */
     line-height: 1.7;
     margin: 0;
     padding: 0;
-    background-color: #FFF5F5; /* สีพื้นหลังขาวอมชมพูอ่อนมากๆ ดูซอฟต์ */
-    color: #4A3E3D; /* สีตัวอักษรน้ำตาลเข้มปนเทา เข้ากับสีชมพูได้ดีกว่าสีดำสนิท */
+    background-color: #fceef2; /* สีชมพูพาสเทลนุ่มๆ สบายตา */
+    color: #3a3a3a; /* สีตัวหนังสือเทาเข้ม ไม่ดำสนิท ทำให้อ่านง่าย */
 }
 
-/* 2. ส่วนหัว (Header) */
+/* 2. ส่วนหัวข้อด้านบนสุด (Header) */
 header {
-    /* ไล่เฉดสีชมพูพาสเทลละมุนๆ */
-    background: linear-gradient(135deg, #FFD1DC, #FFA6B9); 
-    color: #5C3D42; /* สีข้อความโทนน้ำตาลเข้มอมชมพูเพื่อให้อ่านง่ายและเข้าธีม */
-    padding: 60px 20px;
     text-align: center;
-    box-shadow: 0 4px 10px rgba(255, 166, 185, 0.15);
+    padding: 50px 20px; /* เพิ่มพื้นที่ให้ดูโล่ง โปร่งสบาย */
+    background: transparent; /* ปล่อยให้กลืนไปกับพื้นหลังหลัก */
 }
 
 header h1 {
-    margin: 0;
-    font-size: 2.6rem;
-    font-weight: 600;
-    letter-spacing: 0.5px;
+    font-size: 2.5rem;
+    color: #d46a85; /* สีชมพูเข้มแบบตุ่นๆ ดูแพง */
+    margin-bottom: 10px;
+    font-weight: 700;
 }
 
 header p {
-    margin: 10px 0 0;
     font-size: 1.1rem;
-    opacity: 0.85;
+    color: #8a7b80; /* สีคำโปรยแบบซอฟต์ๆ */
+    margin: 0;
 }
 
-/* 3. ส่วนเนื้อหา (Section) */
+/* 3. กล่องข้อความสีขาว (คาร์ดแสดงผลงาน) */
 section {
-    padding: 35px;
-    margin: 35px auto;
-    max-width: 800px;
-    background: #FFFFFF; /* พื้นหลังกล่องเนื้อหาสีขาวสะอาด */
-    border-radius: 16px; /* ขอบมนมากขึ้น เพิ่มความน่ารักและนุ่มนวล */
-    /* เงาสีชมพูจางๆ ฟุ้งๆ สไตล์โมเดิร์น */
-    box-shadow: 0 10px 30px rgba(224, 169, 175, 0.12); 
-    transition: all 0.3s ease;
+    padding: 40px;
+    margin: 0 auto 30px auto;
+    max-width: 750px;
+    background: #ffffff; /* กล่องสีขาวบริสุทธิ์ */
+    border-radius: 20px; /* ปรับขอบให้มนโค้งแบบสมัยใหม่ */
+    box-shadow: 0 10px 30px rgba(212, 106, 133, 0.08); /* ใส่เงาฟุ้งๆ สีชมพูอ่อนๆ ให้กล่องดูลอยออกมา */
+    border: 1px solid rgba(212, 106, 133, 0.1); /* ขอบเส้นบางๆ เพื่อความเนี๊ยบ */
 }
 
-/* เอฟเฟกต์เมื่อเมาส์ชี้ที่กล่องเนื้อหา */
-section:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 15px 35px rgba(224, 169, 175, 0.2);
-}
-
-/* 4. หัวข้อ (h2) */
 h2 {
-    color: #DE7A8C; /* สีชมพูเข้มสำหรับหัวข้อ เพื่อความเด่นชัด */
     font-size: 1.6rem;
-    border-bottom: 2px solid #FFE4E8; /* เส้นใต้สีชมพูอ่อน */
-    padding-bottom: 8px;
+    color: #d46a85;
     margin-top: 0;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #fceef2; /* ขีดเส้นใต้หัวข้อแบบน่ารักๆ */
+    padding-bottom: 10px;
 }
 
-/* 5. ส่วนแสดงโพรเจกต์ (.project) */
+/* 4. ส่วนของโปรเจกต์ */
 .project {
     margin-bottom: 25px;
-    padding: 15px 20px;
-    border-left: 4px solid #FFA6B9; /* แถบสีชมพูใสด้านซ้าย */
-    background-color: #FFF9FA; /* พื้นหลังในกล่องโปรเจกต์สีขาวอมชมพูระเรื่อ */
-    border-radius: 0 10px 10px 0;
+    padding: 15px;
+    border-radius: 12px;
+    transition: background 0.3s ease;
+}
+
+/* เวลาเอาเมาส์ไปชี้ที่โปรเจกต์ จะมีไฮไลต์ชมพูอ่อนขึ้นมา */
+.project:hover {
+    background: #fff8f9;
 }
 
 .project h3 {
-    margin: 0 0 8px;
-    color: #5C3D42;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+    margin: 0 0 8px 0;
+    color: #4a4a4a;
 }
 
-/* 6. รายการทักษะ (ul) */
+/* 5. รายการเบลเล็ต (จุดไข่ปลา) */
 ul {
-    list-style-type: none;
+    list-style-type: none; /* เอาจุดสี่เหลี่ยม/กลมแบบเชยๆ ออก */
     padding-left: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 12px;
 }
 
 ul li {
-    background: #FFEBF0; /* กล่องทักษะสีชมพูนมพาสเทล */
-    color: #C95B6F; /* สีตัวอักษรชมพูเข้ม */
-    padding: 8px 15px;
-    border-radius: 20px; /* ทรงแคปซูลมนๆ */
-    font-size: 0.95rem;
-    text-align: center;
-    font-weight: 500;
-    border: 1px solid #FFD1DC; /* เส้นขอบบางๆ เพิ่มความเนี๊ยบ */
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 10px;
 }
 
-/* 7. ส่วนท้าย (Footer) */
+/* สร้างจุดวงกลมสีชมพูเล็กๆ หน้าข้อความแทน */
+ul li::before {
+    content: "•";
+    color: #d46a85;
+    font-weight: bold;
+    display: inline-block;
+    width: 20px;
+    margin-left: -20px;
+}
+
+/* 6. แถบด้านล่างสุดของเว็บ (Footer) */
 footer {
     text-align: center;
-    padding: 25px 0;
-    background: #4A3E3D; /* สีน้ำตาลเข้มอบอุ่น (เข้ากับสีชมพูได้ละมุนกว่าสีดำเข้มๆ) */
-    color: #FFF5F5;
-    margin-top: 60px;
+    padding: 30px 0;
+    background: transparent; /* ไม่ใช้แถบดำหนาๆ เปลี่ยนเป็นปล่อยโล่ง */
+    color: #a69499;
     font-size: 0.9rem;
+    margin-top: 50px;
 }
