@@ -1,138 +1,380 @@
-/* 1. ตั้งค่าพื้นหลังหลักและการเลื่อนแบบนุ่มนวล */
+/* 🚀 FUTURE UI STYLE */
+
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.7;
+    font-family: 'Segoe UI', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #fceef2;
-    color: #3a3a3a;
+    min-height: 100vh;
+
+    background:
+    radial-gradient(circle at top left, #ff9ecb33, transparent 40%),
+    radial-gradient(circle at bottom right, #00ffff22, transparent 40%),
+    #0b0f1a;
+
+    color: #e8faff;
     overflow-x: hidden;
 }
 
-/* 2. ส่วนหัวข้อด้านบนสุด (Header) มีลูกเล่นตัวหนังสือเด้งเบาๆ ตอนโหลด */
+
+/* HEADER */
+
 header {
     text-align: center;
-    padding: 60px 20px;
-    background: transparent;
-    animation: fadeInDown 1s ease-out; /* ลูกเล่นเลื่อนลงมาจากด้านบน */
+    padding: 80px 20px;
+
+    animation: slideDown 1s ease;
 }
+
 
 header h1 {
-    font-size: 2.8rem;
-    color: #d46a85;
-    margin-bottom: 10px;
-    font-weight: 700;
-    letter-spacing: -1px;
+
+    font-size: 3rem;
+
+    background: linear-gradient(
+        90deg,
+        #ff6ec7,
+        #00ffff
+    );
+
+    -webkit-background-clip:text;
+    color:transparent;
+
+    text-shadow:
+    0 0 20px #ff6ec766;
+
 }
+
 
 header p {
-    font-size: 1.2rem;
-    color: #8a7b80;
-    margin: 0;
+
+    color:#b8c7d9;
+    font-size:1.2rem;
+
 }
 
-/* 3. กล่องข้อความหลัก (Section) */
+
+
+/* GLASS BOX */
+
 section {
-    padding: 40px;
-    margin: 0 auto 40px auto;
-    max-width: 750px;
-    background: #ffffff;
-    border-radius: 24px; /* ขอบมนสวยๆ */
-    box-shadow: 0 10px 40px rgba(212, 106, 133, 0.06);
-    border: 1px solid rgba(212, 106, 133, 0.08);
-    animation: fadeInUp 1.2s ease-out; /* ลูกเล่นกล่องลอยขึ้นตอนเปิดเว็บ */
+
+    max-width:850px;
+
+    margin:40px auto;
+
+    padding:40px;
+
+
+    background:
+
+    rgba(255,255,255,0.08);
+
+
+    backdrop-filter: blur(15px);
+
+
+    border-radius:30px;
+
+
+    border:
+
+    1px solid rgba(255,255,255,.15);
+
+
+    box-shadow:
+
+    0 0 40px rgba(0,255,255,.15);
+
+
+    animation: floatIn 1s ease;
+
+
 }
+
+
+
+/* TITLE */
+
 
 h2 {
-    font-size: 1.6rem;
-    color: #d46a85;
-    margin-top: 0;
-    margin-bottom: 30px;
-    border-bottom: 2px dashed #fceef2; /* เปลี่ยนเป็นเส้นประน่ารักๆ */
-    padding-bottom: 12px;
+
+
+    color:#00ffff;
+
+
+    border-bottom:
+
+    2px solid #00ffff;
+
+
+    padding-bottom:10px;
+
+
+    text-shadow:
+
+    0 0 10px #00ffff;
+
+
+
 }
 
-/* 4. ลูกเล่นเก๋ๆ ตรงกล่องโปรเจกต์ (ขยับได้เมื่อเมาส์ชี้!) */
+
+
+/* PROJECT CARD */
+
+
 .project {
-    margin-bottom: 20px;
-    padding: 20px;
-    border-radius: 16px;
-    background: #ffffff;
-    border: 1px solid #fceef2;
-    cursor: pointer;
-    
-    /* สั่งให้โค้ดส่วนนี้ขยับแบบนุ่มนวล (Transition) */
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+
+
+    padding:25px;
+
+
+    margin:20px 0;
+
+
+    border-radius:20px;
+
+
+    background:
+
+    linear-gradient(
+
+    135deg,
+
+    rgba(255,255,255,.1),
+
+    rgba(0,255,255,.05)
+
+    );
+
+
+
+    border:
+
+    1px solid rgba(255,255,255,.2);
+
+
+
+    transition:.4s;
+
+
+    cursor:pointer;
+
+
 }
 
-/* ⚡️ เมื่อเอาเมาส์ไปชี้ที่กล่องโปรเจกต์ */
+
+
+/* HOVER */
+
+
 .project:hover {
-    transform: translateY(-8px) scale(1.02); /* กล่องจะลอยขึ้นและขยายใหญ่ขึ้นนิดนึง */
-    background: #fff8f9; /* เปลี่ยนสีพื้นหลังกล่องให้อ่อนลง */
-    box-shadow: 0 15px 30px rgba(212, 106, 133, 0.15); /* เงาจะเข้มขึ้นดูลอยเด่น */
-    border-color: #ffb3c6; /* เส้นขอบเปลี่ยนเป็นสีชมพู */
+
+
+    transform:
+
+    translateY(-12px)
+
+    scale(1.03);
+
+
+
+    box-shadow:
+
+
+    0 0 30px #00ffff66;
+
+
+
+    border-color:#00ffff;
+
+
+
 }
 
-/* ตัวหนังสือในโปรเจกต์เปลี่ยนสีเมื่อเมาส์ชี้ */
+
+
+/* PROJECT TITLE */
+
+
 .project:hover h3 {
-    color: #d46a85;
-    transition: color 0.3s ease;
+
+
+    color:#ff6ec7;
+
+
+    text-shadow:
+
+
+    0 0 15px #ff6ec7;
+
+
 }
 
-/* 5. รายการจุดไข่ปลา (ขยับดุ๊กดิ๊กเวลาชี้) */
+
+
+
+/* LIST */
+
+
 ul {
-    list-style-type: none;
-    padding-left: 0;
+
+
+    padding:0;
+
+    list-style:none;
+
+
 }
+
+
 
 ul li {
-    position: relative;
-    padding-left: 25px;
-    margin-bottom: 12px;
-    transition: transform 0.2s ease;
+
+
+    margin:15px 0;
+
+
+    padding-left:35px;
+
+
+    position:relative;
+
+
+    transition:.3s;
+
+
 }
 
-/* ดึงข้อความให้ขยับขวาเล็กน้อยเวลาเมาส์ชี้ */
-ul li:hover {
-    transform: translateX(5px); 
-}
+
 
 ul li::before {
-    content: "🌸"; /* เปลี่ยนจากจุดกลมๆ เป็นไอคอนดอกไม้สุดเก๋ */
-    position: absolute;
-    left: 0;
-    top: 2px;
-    font-size: 0.9rem;
+
+
+    content:"⚡";
+
+
+    position:absolute;
+
+    left:0;
+
+
+    color:#00ffff;
+
+
 }
 
-/* 6. ส่วนท้าย (Footer) */
+
+
+ul li:hover {
+
+
+    transform:translateX(10px);
+
+
+    color:#00ffff;
+
+
+}
+
+
+
+/* FOOTER */
+
+
 footer {
-    text-align: center;
-    padding: 40px 0;
-    background: transparent;
-    color: #a69499;
-    font-size: 0.9rem;
+
+
+    text-align:center;
+
+
+    padding:50px;
+
+
+    color:#8899aa;
+
+
 }
 
-/* 🛸 ส่วนของแอนิเมชันตอนเปิดหน้าเว็บครั้งแรก (Keyframes) */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+
+
+/* ANIMATION */
+
+
+@keyframes slideDown {
+
+
+from{
+
+opacity:0;
+
+transform:translateY(-50px);
+
 }
 
-@keyframes fadeInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+
+}
+
+
+
+@keyframes floatIn {
+
+
+from{
+
+opacity:0;
+
+transform:translateY(50px);
+
+}
+
+
+to{
+
+
+opacity:1;
+
+transform:translateY(0);
+
+
+}
+
+
+}
+
+
+/* Neon scrollbar */
+
+
+::-webkit-scrollbar{
+
+width:10px;
+
+}
+
+
+::-webkit-scrollbar-thumb{
+
+
+background:
+
+linear-gradient(#ff6ec7,#00ffff);
+
+
+border-radius:20px;
+
+
 }
